@@ -1,0 +1,47 @@
+server:
+  port: 80
+spring:
+  application:
+    name: customer-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true # 开启配置  通过名称去找
+          lower-case-service-id: true #将服务器转为小写
+      routes:   #路由规则
+        - id: customer-server
+          uri: lb://customer-server   #负责均衡 lb:服务名实例
+          predicates:  #断言规则  通过路径访问这个实例
+            - Path=/customer/**
+          filters:
+            - StripPrefix=1   # StripPrefix参数表示在将请求发送到下游之前从请求中剥离的路径个数：例如： = 1 的话就是/customer/    = 2 /customer/xxx/**
+
+        - id: customer-oauth2-server
+          uri: lb://customer-oauth2-server
+          predicates:
+            - Path=/auth/**
+          filters:
+            - StripPrefix=1
+
+
+secure:
+  ignore:
+    urls: # 配置白名单路径
+      - /actuator/**
+      - /auth/oauth/**
+      - /customer/**
+
+
+# 配置 Eureka Server 注册中心
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+logging:
+  pattern:
+    console: '%d{HH:mm:ss} [%thread] %-5level %logger{50} - %msg%n'
