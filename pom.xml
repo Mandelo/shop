@@ -11,9 +11,6 @@
     <modules>
         <module>shop-common</module>
         <module>shop-register</module>
-        <module>customer-server</module>
-        <module>shop-oauth2</module>
-        <module>shop-gateway</module>
         <module>shop-provider/shop-provider-data</module>
         <module>shop-provider/shop-provider-order</module>
         <module>shop-provider/shop-provider-uac</module>

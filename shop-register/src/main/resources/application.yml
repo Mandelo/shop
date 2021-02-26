@@ -2,17 +2,17 @@ server:
   port: 8761
 spring:
   application:
-    name: xxx-register
+    name: eureka-server
 
 
 # Eureka Server
 
 eureka:
-  #  instance:
-  #    hostname: localhost #当前实例的主机名称
-  #    prefer-ip-address: true
+  instance:
+    hostname: localhost
+    prefer-ip-address: true
   client:
-    register-with-eureka: false #false代表不向注册中心注册自己（因为本身就是注册中心），默认是true，如果不设为false，启动会报找不到注册中心的错误
-    fetch-registry: false #注册中心用于维护服务实例，无需检索服务，故设为false
+    register-with-eureka: false
+    fetch-registry: false
     service-url:
-      defaultZone: http://localhost:8761/eureka/  # 服务注册地址
+      defaultZone: http://localhost:8761/eureka/

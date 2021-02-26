@@ -32,7 +32,8 @@ eureka:
     prefer-ip-address: true
     instance-id: ${spring.cloud.client.ip-address}:${server.port}
   client:
-    register-with-eureka: false
+    fetch-registry: true
+    register-with-eureka: true
     service-url:
       defaultZone: http://localhost:8761/eureka/
 
@@ -40,8 +41,6 @@ logging:
   pattern:
     console: '%d{HH:mm:ss} [%thread] %-5level %logger{50} - %msg%n'
 
-# Mybatis
-mybatis-plus:
-  type-aliases-package: com.luoxiao.entity
-  configuration:
-    map-underscore-to-camel-case: true
+feign:
+  hystrix:
+    enabled: true # fegin默认关闭hystrix服务

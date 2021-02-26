@@ -32,11 +32,11 @@
             <groupId>com.battcn</groupId>
             <artifactId>swagger-spring-boot-starter</artifactId>
         </dependency>
-        <!-- security -->
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.security</groupId>-->
-<!--            <artifactId>spring-security-core</artifactId>-->
-<!--        </dependency>-->
+        <!-- spring web -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
     </dependencies>
 
 </project>

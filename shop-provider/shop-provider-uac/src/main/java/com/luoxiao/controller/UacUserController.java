@@ -23,7 +23,7 @@ public class UacUserController {
     private UacUserService uacUserService;
 
     @GetMapping("/uac/{id}")
-    public Map<String,Object> getUserById(@PathVariable("id")String id){
+    public Object getUserById(@PathVariable("id")String id){
         ModelMap map = new ModelMap();
         UacUserEntity uacUserEntity = uacUserService.getById(id);
         map.put("data",uacUserEntity);
