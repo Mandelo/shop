@@ -18,11 +18,28 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @TableName("uac_user")
 public class UacUserEntity {
+
     @TableId
     private Integer id;
+
+    /**
+     * 昵称
+     */
     private String nickname;
+
+    /**
+     * 密码
+     */
     private String password;
+
+    /**
+     * 账号
+     */
     private String account;
+
+    /**
+     * 手机号
+     */
     private String mobile;
 
 }
