@@ -13,11 +13,6 @@ import org.springframework.stereotype.Component;
 public class Result<T> {
 
     /**
-     * 请求是否成功
-     */
-    private Boolean success;
-
-    /**
      * code
      */
     private Integer code;
@@ -36,19 +31,26 @@ public class Result<T> {
 
     }
 
-    public Result(Boolean success,Integer code, String msg,T data) {
-        this.success = success;
+    public Result(Integer code, String msg,T data) {
         this.code = code;
         this.msg = msg;
         this.data = data;
     }
 
+
     public static Result defineError(CustomException de){
         Result result = new Result();
-        result.setSuccess(false);
         result.setCode(de.getErrorCode());
         result.setMsg(de.getErrorMsg());
         result.setData(null);
+        return result;
+    }
+
+    public static Result OK(Object data){
+        Result result = new Result();
+        result.setCode(ErrorEnum.SUCCESS.getErrorCode());
+        result.setMsg(ErrorEnum.SUCCESS.getErrorMsg());
+        result.setData(data);
         return result;
     }
 
@@ -56,7 +58,6 @@ public class Result<T> {
         Result result = new Result();
         result.setMsg(errorEnum.getErrorMsg());
         result.setCode(errorEnum.getErrorCode());
-        result.setSuccess(false);
         result.setData(null);
         return result;
     }

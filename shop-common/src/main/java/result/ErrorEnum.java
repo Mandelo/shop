@@ -8,11 +8,11 @@ package result;
 
 public enum ErrorEnum {
 
-    SUCCESS(200, "nice"),
-    NO_PERMISSION(403, "你没得权限"),
-    NO_AUTH(401, "你能不能先登录一下"),
+    SUCCESS(200, "操作成功"),
+    NO_PERMISSION(403, "权限不足"),
+    NO_AUTH(401, "权限不足"),
     NOT_FOUND(404, "未找到该资源!"),
-    INTERNAL_SERVER_ERROR(500, "服务器跑路了");
+    INTERNAL_SERVER_ERROR(500, "服务器错误");
 
     /**
      * 错误码

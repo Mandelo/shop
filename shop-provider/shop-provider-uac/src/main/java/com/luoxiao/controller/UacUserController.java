@@ -7,6 +7,8 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
+import result.ErrorEnum;
+import result.Result;
 
 import java.util.Map;
 
@@ -23,11 +25,9 @@ public class UacUserController {
     private UacUserService uacUserService;
 
     @GetMapping("/uac/{id}")
-    public Object getUserById(@PathVariable("id")String id){
-        ModelMap map = new ModelMap();
+    public Result getUserById(@PathVariable("id")String id){
         UacUserEntity uacUserEntity = uacUserService.getById(id);
-        map.put("data",uacUserEntity);
-        return map;
+        return Result.OK(uacUserEntity);
     }
 
 }

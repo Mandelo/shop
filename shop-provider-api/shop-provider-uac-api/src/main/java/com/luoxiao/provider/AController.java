@@ -18,7 +18,7 @@ public class AController {
     @Autowired
     private UacFeignApi uacFeignApi;
 
-    @GetMapping("/uac/{id}")
+    @GetMapping("/api/uac/{id}")
     public Object getUserById(@PathVariable("id")String id){
         return uacFeignApi.getUserById(id);
     }
