@@ -14,6 +14,6 @@ import result.Result;
 public class UacFeignApiHystrix implements UacFeignApi {
 
     public Result getUserById(String id) {
-        return null;
+        return new Result(500,"系统错误");
     }
 }

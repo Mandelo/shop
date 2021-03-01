@@ -27,7 +27,7 @@ public class Result<T> {
      */
     private T data;
 
-    private Result() {
+    public Result() {
 
     }
 
@@ -35,6 +35,11 @@ public class Result<T> {
         this.code = code;
         this.msg = msg;
         this.data = data;
+    }
+
+    public Result(Integer code, String msg) {
+        this.code = code;
+        this.msg = msg;
     }
 
 
