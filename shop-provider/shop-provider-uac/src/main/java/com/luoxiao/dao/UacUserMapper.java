@@ -14,4 +14,5 @@ import org.springframework.stereotype.Component;
 @Mapper
 @Component
 public interface UacUserMapper extends BaseMapper<UacUserEntity> {
+
 }
