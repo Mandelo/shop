@@ -44,4 +44,4 @@ logging:
 #feign默认关闭hystrix服务
 feign:
   hystrix:
-    enabled: false
+    enabled: true
