@@ -28,10 +28,10 @@
             <artifactId>guava</artifactId>
         </dependency>
         <!-- swagger -->
-        <dependency>
+<!--        <dependency>
             <groupId>com.battcn</groupId>
             <artifactId>swagger-spring-boot-starter</artifactId>
-        </dependency>
+        </dependency>-->
         <!-- spring web -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

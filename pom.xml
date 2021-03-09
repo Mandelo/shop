@@ -15,7 +15,7 @@
         <module>shop-provider/shop-provider-order</module>
         <module>shop-provider/shop-provider-uac</module>
         <module>shop-provider-api/shop-provider-uac-api</module>
-        <module>shop-config</module>
+        <module>shop-gateway</module>
     </modules>
 
     <!-- 可以集中定义依赖资源的版本信息 -->
