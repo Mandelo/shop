@@ -22,4 +22,5 @@ public class UacUserServiceImpl extends ServiceImpl<UacUserMapper, UacUserEntity
     public UacUserEntity getById(Serializable id) {
         return baseMapper.selectById(id);
     }
+
 }

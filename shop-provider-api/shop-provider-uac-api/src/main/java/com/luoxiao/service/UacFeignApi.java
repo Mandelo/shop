@@ -1,5 +1,6 @@
 package com.luoxiao.service;
 
+import com.luoxiao.service.hystrix.UacFeignApiHystrix;
 import org.mapstruct.Mapper;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Component;
@@ -16,10 +17,10 @@ import java.util.Map;
  * @date： 2021/2/25
  */
 @Component
-@FeignClient("PROVIDER-UAC")
+@FeignClient(value = "PROVIDER-UAC",fallback = UacFeignApiHystrix.class)
 public interface UacFeignApi {
 
     @GetMapping("/uac/{id}")
-    public Result getUserById(@PathVariable("id")String id);
+    public Result getUserById(@PathVariable("id")Long id);
 
 }
